@@ -3,7 +3,7 @@ package layer_test
 import (
 	"testing"
 
-	"github.com/budougumi0617/temp/layer"
+	"github.com/budougumi0617/layer"
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 
