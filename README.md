@@ -114,6 +114,9 @@ Analyzer flags:
         jsonlayer defines layer hierarchy by JSON array (default "[ \"external\",\"db\",\"ui\", [ \"controllers\", [ \"usecases\", [ \"entity\" ] ] ] ]")
 ```
 
+## TODO
+- [ ] Support to load JSON array from file
+
 ## Contribution
 1. Fork ([https://github.com/budougumi0617/layer/fork](https://github.com/budougumi0617/layer/fork))
 2. Create a feature branch
