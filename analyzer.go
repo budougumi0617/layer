@@ -8,6 +8,7 @@ import (
 	"golang.org/x/tools/go/ast/inspector"
 )
 
+// Analyzer confirms whether the packages follow to the layer structure.
 var Analyzer = &analysis.Analyzer{
 	Name: "layer",
 	Doc:  Doc,
@@ -17,6 +18,7 @@ var Analyzer = &analysis.Analyzer{
 	},
 }
 
+// Doc defines analysis messages.
 const Doc = "layer is ..."
 
 func run(pass *analysis.Pass) (interface{}, error) {
