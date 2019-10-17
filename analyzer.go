@@ -47,8 +47,8 @@ var Analyzer = &analysis.Analyzer{
 	},
 }
 
-// Doc defines analysis messages.
-const Doc = "layer is ..."
+// Doc defines analysis messages. this message is shown by "layer help" command.
+const Doc = "layer checks whether there are dependencies that illegal cross-border the layer structure. The layer structure is defined as a JSON array using the -jsonlayer option."
 
 func run(pass *analysis.Pass) (interface{}, error) {
 	l := &Layer{}
