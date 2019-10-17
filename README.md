@@ -1,6 +1,13 @@
 # layer
-![github actions badges](https://github.com/budougumi0617/layer/workflows/reviewdog/badge.svg)
-![github actions badges](https://github.com/budougumi0617/layer/workflows/test/badge.svg)
+[![godoc](https://godoc.org/github.com/budougumi0617/layer?status.svg)][godoc]
+[![github actions reviewdog badges](https://github.com/budougumi0617/layer/workflows/reviewdog/badge.svg)][actions_reviwdog]
+[![github actions test badges](https://github.com/budougumi0617/layer/workflows/test/badge.svg)][actions_test]
+[![GolangCI](https://golangci.com/badges/github.com/budougumi0617/layer.svg)][golangci]
+
+[godoc]:https://godoc.org/github.com/budougumi0617/layer
+[actions_reviwdog]:https://github.com/budougumi0617/layer/actions?workflow=reviewdog
+[actions_test]:https://github.com/budougumi0617/layer/actions?workflow=test
+[golangci]:https://golangci.com/r/github.com/budougumi0617/layer
 
 `layer` checks whether there are dependencies that illegal cross-border the layer structure. The layer structure is defined as a JSON array using the -jsonlayer option.
 
