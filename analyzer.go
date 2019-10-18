@@ -2,6 +2,7 @@ package layer
 
 import (
 	"encoding/json"
+	"strconv"
 	"strings"
 
 	"golang.org/x/tools/go/analysis"
@@ -75,10 +76,16 @@ found:
 			continue
 		}
 		for _, i := range f.Imports {
+
+			path, err := strconv.Unquote(i.Path.Value)
+			if err != nil {
+				return nil, err
+			}
+
 			// TODO: ignore standard packages.
 			// memo: https://github.com/golang/go/blob/6cba4dbf80012c272cb04bd878dfba251d9bb05c/src/cmd/go/internal/modload/build.go#L30
-			if invalid(il, i.Path.Value) {
-				pass.Reportf(i.Pos(), "%s must not include %s", currentPackage, i.Path.Value)
+			if invalid(il, path) {
+				pass.Reportf(i.Pos(), "%s must not include %s", currentPackage, path)
 			}
 		}
 	}
@@ -86,8 +93,7 @@ found:
 	return nil, nil
 }
 
-func invalid(l *Layer, s string) bool {
-	path := strings.Trim(s, "\"")
+func invalid(l *Layer, path string) bool {
 	for {
 		if include(l, path) {
 			return true
