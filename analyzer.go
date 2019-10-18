@@ -85,7 +85,7 @@ found:
 			// TODO: ignore standard packages.
 			// memo: https://github.com/golang/go/blob/6cba4dbf80012c272cb04bd878dfba251d9bb05c/src/cmd/go/internal/modload/build.go#L30
 			if invalid(il, path) {
-				pass.Reportf(i.Pos(), "%s must not include %s", currentPackage, path)
+				pass.Reportf(i.Pos(), "%s must not import %s", currentPackage, path)
 			}
 		}
 	}
