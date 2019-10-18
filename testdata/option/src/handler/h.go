@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"repository" // want "handler must not include repository"
+	"repository" // want "handler must not import repository"
 	"service"
 )
 

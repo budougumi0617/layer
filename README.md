@@ -100,7 +100,7 @@ func DeleteHandler(w http.ResponseWriter, r *http.Request) {
 ```bash
 $ go vet -vettool=$(which layer) -layer.jsonlayer "[\"externalinterfaces\", \"web\", \"devices\", \"db\", \"ui\", [ \"controllers\", \"gateways\", \"presenters\", [ \"usecases\", [ \"entity\" ] ] ] ]" ./...
 # github.com/budougumi0617/clean_architecture/web
-web/delete_handler.go:7:2: github.com/budougumi0617/clean_architecture/web must not include "github.com/budougumi0617/clean_architecture/usecases"
+web/delete_handler.go:7:2: github.com/budougumi0617/clean_architecture/web must not import "github.com/budougumi0617/clean_architecture/usecases"
 ```
 
 ## Description

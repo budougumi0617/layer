@@ -9,19 +9,25 @@ import (
 )
 
 func TestOption(t *testing.T) {
+	if err := layer.Analyzer.Flags.Set("jsonlayer", `["handler", ["usecase", ["domain", "repository"]]]`); err != nil {
+		t.Fatal(err)
+	}
 	testdata := filepath.Join(analysistest.TestData(), "option")
-	layer.Analyzer.Flags.Set("jsonlayer", `["handler", ["usecase", ["domain", "repository"]]]`)
 	analysistest.Run(t, testdata, layer.Analyzer, "handler")
 }
 
 func TestNested(t *testing.T) {
-	layer.Analyzer.Flags.Set("jsonlayer", `["handler", ["usecase", ["domain", "repository"]]]`)
+	if err := layer.Analyzer.Flags.Set("jsonlayer", `["handler", ["usecase", ["domain", "repository"]]]`); err != nil {
+		t.Fatal(err)
+	}
 	testdata := filepath.Join(analysistest.TestData(), "nested")
 	analysistest.Run(t, testdata, layer.Analyzer, "handler/...")
 }
 
 func TestImportPath(t *testing.T) {
-	layer.Analyzer.Flags.Set("jsonlayer", `["a", ["b", ["c"]]]`)
+	if err := layer.Analyzer.Flags.Set("jsonlayer", `["a", ["b", ["c"]]]`); err != nil {
+		t.Fatal(err)
+	}
 	testdata := filepath.Join(analysistest.TestData(), "importpath")
 	analysistest.Run(t, testdata, layer.Analyzer, "a/...")
 }

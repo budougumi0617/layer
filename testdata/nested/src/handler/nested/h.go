@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	rn "repository/nested" // want "handler/nested must not include repository/nested"
+	rn "repository/nested" // want "handler/nested must not import repository/nested"
 	sn "service/nested"
 )
 
