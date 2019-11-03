@@ -15,5 +15,15 @@ jobs:
         go-version: ${{ matrix.go-version }}
     - name: Checkout code
       uses: actions/checkout@v1
+    - name: Use Cache
+      uses: actions/cache@preview
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+    - name: Download Modules
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: go mod download
     - name: Run tests
       run: go test -v -covermode=atomic
