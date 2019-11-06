@@ -16,7 +16,7 @@
 You can get `layer` by `go get` command.
 
 ```bash
-$ go get -u github.com/budougumi0617/layer
+$ go get -u github.com/budougumi0617/layer/cmd/layer
 ```
 
 ## QuickStart
